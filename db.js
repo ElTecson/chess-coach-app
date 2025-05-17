@@ -1,16 +1,19 @@
-const { MongoClient } = require("mongodb");
-require("dotenv").config();
+const { MongoClient } = require('mongodb');
+const dotenv = require('dotenv');
 
-const client = new MongoClient(process.env.MONGODB_URI);
-let db;
+dotenv.config();
+
+const uri = process.env.MONGO_URI;
+const client = new MongoClient(uri);
 
 async function connectDB() {
-  if (!db) {
+  try {
     await client.connect();
-    db = client.db("chesscoach");
+    console.log('✅ Connected to MongoDB Atlas');
+  } catch (err) {
+    console.error('❌ MongoDB connection error:', err);
   }
-  return db;
 }
 
-module.exports = connectDB;
+module.exports = { connectDB, client };
 
