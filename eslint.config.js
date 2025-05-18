@@ -1,3 +1,4 @@
+
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -5,8 +6,10 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
   { ignores: ['dist'] },
+
+  // Config for client-side files (React)
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['client/**/*.{js,jsx}', '**/*.jsx'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -30,4 +33,18 @@ export default [
       ],
     },
   },
+
+  // Config for server-side files (Node.js, Express JS, MongoDB)
+  {
+    files: ['server/**/*.{js,ts}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.node,
+      sourceType: 'module',
+    },
+    rules: {
+      ...js.configs.recommended.rules,
+    },
+  },
 ]
+
