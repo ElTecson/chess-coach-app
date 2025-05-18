@@ -1,12 +1,12 @@
-const { MongoClient } = require('mongodb');
-const dotenv = require('dotenv');
+import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
 const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri);
+export const client = new MongoClient(uri);
 
-async function connectDB() {
+export async function connectDB() {
   try {
     await client.connect();
     console.log('✅ Connected to MongoDB Atlas');
@@ -14,6 +14,4 @@ async function connectDB() {
     console.error('❌ MongoDB connection error:', err);
   }
 }
-
-module.exports = { connectDB, client };
 
