@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: Inter, sans-serif;
+  font-size: 3.75rem;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.desc {
+  font-family: Inter, sans-serif;
+  font-size: 1.75rem;
+}
+
+.cta-btn {
+  font-family: Inter, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  --pad-x: 1.75rem;
+  --pad-y: 0.75rem;
+  padding: var(--pad-y) var(--pad-x);
+  background-color: #CA0000;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 
+    box-shadow 0.3s ease-out,
+    background-color 0.3s ease-out;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 0 2px #87BFFF;
+  background-color: #CA1111;
+}
+
+.link a {
+  position: relative;
+  color: #87BFFF;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.link a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background: #87BFFF;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.link a:hover::after {
+  transform: scaleX(1);
+}
+
