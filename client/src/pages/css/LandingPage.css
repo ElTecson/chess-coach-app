@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: Inter, sans-serif;
+  font-size: 3.75rem;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.desc {
+  font-family: Inter, sans-serif;
+  font-size: 1.75rem;
+}
+
+.cta-btn {
+  font-family: Inter, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  --pad-x: 1.75rem;
+  --pad-y: 0.75rem;
+  padding: var(--pad-y) var(--pad-x);
+  background-color: #CA0000;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.link a {
+  font-size: 1.5rem;
+  color: #87BFFF;
+  text-decoration: none;
+}
+
